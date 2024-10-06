@@ -1,6 +1,5 @@
 export default function AfficherName({ LastName }) {
-  console.log(LastName);
-  return <h1>Hello Hicham {LastName}</h1>;
+  return <h1>Hello Hicham {LastName}.</h1>;
 }
 
 // Props with Class:
