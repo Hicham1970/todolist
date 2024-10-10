@@ -1,17 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import AfficherName from "./Hello/props";
-import TextField from "./Forms/TextField";
-import Fruits from "./Fruits/Fruits";
-import Counter from "./Counter/Counter";
-import Event from "./Events/Event";
+// import FruitsList from "./Fruits/FruitsList";
+// import AfficherName from "./Hello/props";
+// import TextField from "./Forms/TextField";
+// import Fruits from "./Fruits/Fruits";
+// import Counter from "./Counter/Counter";
+// import Event from "./Events/Event";
+// import Form from "./Forms/Form";
+import Counter2 from "./Counter/Counter2";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const fruitsArray = ["Strawberry", "Apple", "Lemon", "Watermelon", "Oranges"];
+// const fruitsArray = [];
 root.render(
   <>
-    <AfficherName LastName="Garoum" />
+    {/* <AfficherName LastName="Garoum" />
     <TextField inputName="FirstName" inputLabel="First Name : ">
       Veuillez insérer votre Nom!
     </TextField>
@@ -19,8 +22,10 @@ root.render(
       Veuillez insérer votre Prénom!
     </TextField>
     <Fruits fruits={fruitsArray} />
-    <Counter />
+    <Counter initialValue={2} step={2} />
     <br></br>
-    <Event />
+    <Form />
+    // <Event /> */}
+    <Counter2 />
   </>
 );

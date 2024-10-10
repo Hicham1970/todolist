@@ -1,3 +1,38 @@
+// Fonction Component
+import { useState } from "react";
+/*export default function Counter({ initialValue, step }) {
+  const [count, setCount] = useState(initialValue);
+  return (
+    <div className="center">
+      <span>Il y a {count} secondes</span>
+      <br></br>
+      <button
+        onClick={() => {
+          setCount((prevCount) => prevCount + step);
+        }}
+      >
+        UP
+      </button>
+      <br></br>
+      <button
+        onClick={() => {
+          setCount((prevCount) => prevCount - step);
+        }}
+      >
+        Down
+      </button>
+      <br></br>
+      <button
+        onClick={() => {
+          setCount(0);
+        }}
+      >
+        Rest
+      </button>
+    </div>
+  );
+}*/
+// Class component
 import { Component } from "react";
 
 export default class Counter extends Component {
