@@ -8,7 +8,10 @@ import "./index.css";
 // import Counter from "./Counter/Counter";
 // import Event from "./Events/Event";
 // import Form from "./Forms/Form";
-import Counter2 from "./Counter/Counter2";
+// import Counter2 from "./Counter/Counter2";
+// import HelloWorld from "./Hello/helloworld";
+// import ToggleName from "./Toggles/ToggleName";
+import Header from "./ComponentLifecycle/Header";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // const fruitsArray = [];
@@ -26,6 +29,9 @@ root.render(
     <br></br>
     <Form />
     // <Event /> */}
-    <Counter2 />
+    {/* <Counter2 /> */}
+    {/* <HelloWorld lastName={"Garoum"} /> */}
+    {/* <ToggleName /> */}
+    <Header favCol={"black"} />
   </>
 );
