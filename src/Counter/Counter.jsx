@@ -1,5 +1,5 @@
 // Fonction Component
-import { useState } from "react";
+// import { useState } from "react";
 /*export default function Counter({ initialValue, step }) {
   const [count, setCount] = useState(initialValue);
   return (
@@ -41,8 +41,18 @@ export default class Counter extends Component {
     this.state = {
       Counter: 0,
       date: undefined,
+      age: 24,
     };
   }
+  /* usage de la fonction shouldComponentUpdate() ex. on a un props age qu'on va utiliser pour une base de données users et on a pas  pas besoin d'afficher ce user, et si cet age change on a pas besoin d'appeler le render():*/
+  shouldComponentUpdate(nextProps, nextState, nextContext) {
+    console.log(nextState, this.state);
+    if (nextState.age !== this.state.age) {
+      return false;
+    }
+    return true;
+  }
+
   incrementUp = () => {
     this.setState((prevState) => ({ Counter: prevState.Counter + 1 }));
   };

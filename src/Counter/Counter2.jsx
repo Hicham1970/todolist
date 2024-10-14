@@ -22,12 +22,21 @@ export default class Counter2 extends Component {
     // fetch an Api
     console.log("component Mounted");
   }
+  /* getSnapshotBeforeUpdate(), ici c'est la meilleur place pour récupérer un element HTML
+  avant qu'il se met a jour dans componentDidUpdate et le modifier par la suite*/
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    const scroll = { x: window.scrollX, y: window.scrollY };
+    return scroll;
+  }
+
   // Si le counter change on donne une alert
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps, prevState, snapshot) {
     if (prevState.Counter !== this.state.Counter) {
       console.log("Counter updated");
       // alert("Counter updated");
       console.log(prevState, this.state);
+      window.scroll(snapshot.x + 32, snapshot.y + 32);
+      console.log(snapshot);
     }
   }
 
