@@ -1,12 +1,10 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Counter from "./Counter/Counter";
 
 export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
+      <Counter initialValue={2} step={2} />
     </div>
   );
 }

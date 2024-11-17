@@ -1,11 +1,47 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 // Fonction Component
-// import { useState } from "react";
-/*export default function Counter({ initialValue, step }) {
+import { useState, useEffect } from "react";
+export default function Counter({ initialValue, step }) {
   const [count, setCount] = useState(initialValue);
+  const [age, setAge] = useState(initialValue);
+  const [time, setTime] = useState(new Date());
+  // Hooks
+  // useState
+  // useEffect comparable a componentDidMount, componentDidUpdate et
+  // componentWillUnmount pour les Class components
+
+  // Ici elle s'execute chaque fois apres le rendre  car il n y a pas de dependencies, et c'est pratiquement inutilisable
+  useEffect(() => {
+    console.log("Every time after the rendre!");
+  });
+
+  // Ici elle joue le rôle du componentDidMount, s'execute une seule fois
+  useEffect(() => {
+    console.log("Composant Mounted !!");
+    const timer = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+
+    // Nettoyage de l'intervalle lors du démontage du composant, la même chose si on ajoute un eventListener , si on l'ajoute on doit le supprimer pour les performances
+    return () => clearInterval(timer);
+  }, []);
+
+  // Ici elle joue le rôle du componentDidUpdate, si le count change cette fonction fired
+  useEffect(() => {
+    console.log("Composant mis a jour!!");
+  }, [count]);
+
+  // Ici elle joue le rôle du componentDidUpdate, si et seulement si l'age change cette fonction fired
+  useEffect(() => {
+    console.log("Composant age est mis a jour!!");
+  }, [age]);
+
   return (
-    <div className="center">
-      <span>Il y a {count} secondes</span>
-      <br></br>
+    <div className="container">
+      <span>Date : {time.toLocaleString()}</span>
+      <h1>Il y a {count} secondes</h1>
+
       <button
         onClick={() => {
           setCount((prevCount) => prevCount + step);
@@ -31,9 +67,9 @@
       </button>
     </div>
   );
-}*/
+}
 // Class component
-import { Component } from "react";
+/*import { Component } from "react";
 
 export default class Counter extends Component {
   constructor(props) {
@@ -45,7 +81,7 @@ export default class Counter extends Component {
     };
   }
   /* usage de la fonction shouldComponentUpdate() ex. on a un props age qu'on va utiliser pour une base de données users et on a pas  pas besoin d'afficher ce user, et si cet age change on a pas besoin d'appeler le render():*/
-  shouldComponentUpdate(nextProps, nextState, nextContext) {
+/*  shouldComponentUpdate(nextProps, nextState, nextContext) {
     console.log(nextState, this.state);
     if (nextState.age !== this.state.age) {
       return false;
@@ -76,3 +112,4 @@ export default class Counter extends Component {
     );
   }
 }
+*/
